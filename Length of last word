@@ -1,0 +1,17 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int rp = s.length();
+        while (rp-- > 0) {
+            if (s.charAt(rp) != ' ') {
+                break;
+            }
+        }
+        int lp = rp;
+        while (lp-- > 0) {
+            if (s.charAt(lp) == ' ') {
+                break;
+            }
+        }
+        return rp - lp;
+    }
+}
