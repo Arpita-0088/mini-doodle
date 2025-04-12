@@ -1,0 +1,18 @@
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        ListNode temp = head;
+        ListNode temp2 = head.next;
+        while(temp2 != null) {
+            if(temp.val == temp2.val) {
+                temp.next = temp2.next; // Skip duplicate node
+            } else {
+                temp = temp2; // Move to the next distinct node
+            }
+            temp2 = temp2.next; // Always move temp2 forward
+        }
+        return head;
+    }
+}
