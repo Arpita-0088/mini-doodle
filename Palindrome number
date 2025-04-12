@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        int copy = 0;
+        int digit = 0;
+        int inp = x;
+        if (x < 0) {
+            return false;
+        }
+        while (inp !=0) {
+            digit = inp % 10;
+            inp = inp / 10;
+            copy = (copy * 10) + digit;
+        }
+        return copy == x;
+    }
+}
